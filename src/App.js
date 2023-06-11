@@ -3,7 +3,15 @@ import './App.css';
 
 function App() {
 
-  const []
+  const [quote, setQuote] = useState('');
+  const [author, setAuthor] = useState('');
+  const [randomNumber, setRandomNumber] = useState(0);
+
+
+  const generateRandomNumber = () =>{ 
+    let randomInterger = Math.floor(quotesArray.length * Math.random())
+    setRandomNumber(randomInterger)
+  }
 
 
   return (
