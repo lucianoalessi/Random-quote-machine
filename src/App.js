@@ -4,7 +4,7 @@ import './App.css';
 function App() {
 
 
-  const quoteDBUrl = "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json"
+  const quoteURL = "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json"
 
   const [quote, setQuote] = useState('Everything you’ve ever wanted is on the other side of fear.');
   const [author, setAuthor] = useState('George Addair');
@@ -20,14 +20,15 @@ function App() {
   }
 
   useEffect(()=>{
-    fetchQuotes(quoteDBUrl)
-  },[quoteDBUrl])
-
+    fetchQuotes(quoteURL)
+  },[quoteURL])
 
 
   const generateRandomNumber = () =>{ 
     let randomInterger = Math.floor(quotesArray.length * Math.random())
     setRandomNumber(randomInterger)
+    setQuote(quotesArray[randomInterger].quote)
+    setAuthor(quotesArray[randomInterger].author)
   }
 
 
@@ -35,10 +36,26 @@ function App() {
 
   return (
     <div className="App">
-      {randomNumber}
-      <p>"{quote}"</p>
-      <p> - {author} </p>
-      <button onClick={() => generateRandomNumber()}>presionar</button>
+      <header className='App-header'>
+        <div id='quote-box'>
+
+        <p id='text'>
+          "{quote}"
+          </p>
+
+      <p id='author'>
+         - {author}
+         </p>
+
+      <button id='new-quote' onClick={() => generateRandomNumber()}>presionar</button>
+
+        <a id='tweet-quote' href={encodeURI(`http://www.twitter.com/intent/tweet?text=${quote} -${author}`)}>tweet Quote</a> 
+        </div>
+
+       
+        
+      
+      </header>
     </div>
   );
 }
