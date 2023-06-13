@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 function App() {
 
@@ -40,28 +42,38 @@ function App() {
 
 
   return (
+    <body style={{backgroundColor:accentColor , color:accentColor}}>
     <div className="App">
-      <header className='App-header' style={{backgroundColor:accentColor , color:accentColor}}>
-        <div id='quote-box'>
 
-        <p id='text'>
+        <div id='quote-box'   style={{color: accentColor}}>
+          <h1 id='tittle'>Quote of day:</h1>
+
+        <div id='text'>
           "{quote}"
-          </p>
-
-      <p id='author'>
-         - {author}
-         </p>
-
-        <a id='tweet-quote' href={encodeURI(`http://www.twitter.com/intent/tweet?text=${quote} -${author}`)}>tweet Quote</a>
-
-        <button id='new-quote' onClick={() => generateRandomNumber()}>presionar</button>
+        </div>
+        
+        <div id='author'>
+          - {author}
+        </div>
+        
+        <div className='buttons'>
+          
+         <a id='tweet-quote' href={encodeURI(`http://www.twitter.com/intent/tweet?text=${quote} -${author}`)} style={{backgroundColor:accentColor}}><FontAwesomeIcon icon={faTwitter}/></a>
+         
+         <button id='new-quote' onClick={() => generateRandomNumber()} style={{backgroundColor:accentColor}}>New Quote</button>
+         
         </div>
 
-       
-        
-      
-      </header>
+      </div>
+
+      <div className='author'>
+          Designed and Coded by
+          <br/>
+          <a href='https://www.linkedin.com/in/lucianoalessi/' target='_blank'>Luciano A. Alessi</a>
+        </div>
+         
     </div>
+    </body>
   );
 }
 
