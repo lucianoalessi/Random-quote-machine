@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-html, body  {
-  background-color: #ffd900;
-}
-
 .App {
   display: flex;
   flex-wrap: wrap;
