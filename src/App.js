@@ -42,8 +42,8 @@ function App() {
 
 
   return (
-    <body style={{backgroundColor:accentColor , color:accentColor}}>
-    <div className="App">
+
+    <div className="App" style={{backgroundColor:accentColor , color:accentColor}}>
 
         <div id='quote-box'   style={{color: accentColor}}>
           <h1 id='tittle'>Quote of day:</h1>
@@ -70,7 +70,6 @@ function App() {
         </div>
          
     </div>
-    </body>
   );
 }
 
