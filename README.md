@@ -4,7 +4,7 @@ This project is a Random Quote Machine and I have done it to get the Front End D
 
 #### Functionalities
 
-1. Presionar el boton new quote para generar una nueva quote.
+1. Press the new quote button to generate a new quote.
 2. Press the button with the twitter icon if you want to tweet that quote.
 
 #### Libraries
