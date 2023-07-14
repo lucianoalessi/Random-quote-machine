@@ -64,32 +64,25 @@ function App() {
     
     <html style={{backgroundColor:accentColor , color:accentColor}}>
       <div className="App" >
-
         <div id='quote-box'   style={{color: accentColor}}>
-          
           <h1 id='tittle'>Quote of day:</h1>
-
           <div id='text'>
             "{quote}"
           </div>
-        
           <div id='author'>
             - {author}
           </div>
-        
           <div className='buttons'>
             <a id='tweet-quote' href={encodeURI(`http://www.twitter.com/intent/tweet?text=${quote} -${author}`)} style={{backgroundColor:accentColor}}><FontAwesomeIcon icon={faTwitter}/></a>
             <button id='new-quote' onClick={() => generateRandomNumber()} style={{backgroundColor:accentColor}}>New Quote</button>
           </div>
-
         </div>
 
         <div className='author'>
           Designed and Coded by
           <br/>
           <a href='https://www.linkedin.com/in/lucianoalessi/' target='_blank'>Luciano A. Alessi</a>
-        </div>
-         
+        </div> 
       </div>
     </html>
   );
