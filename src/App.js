@@ -66,6 +66,7 @@ function App() {
       <div className="App" >
 
         <div id='quote-box'   style={{color: accentColor}}>
+          
           <h1 id='tittle'>Quote of day:</h1>
 
           <div id='text'>
